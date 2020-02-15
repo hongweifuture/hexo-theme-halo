@@ -53,7 +53,7 @@ jobs:
       run: |  
         git clone https://${Github_Pages} .github_pages
         cd .github_pages
-        git checkout -b master
+        git checkout master
         cd ../
         mv .github_pages/.git/ ./public/
         mv ./README.md ./public/
@@ -70,7 +70,7 @@ jobs:
       run: |
         git clone https://${Coding_Username}:${Coding_Token}@${Coding_Pages} .coding_pages
         cd .coding_pages
-        git checkout -b master
+        git checkout master
         cd ../
         rm -r ./public/.git/
         mv .coding_pages/.git/ ./public/
