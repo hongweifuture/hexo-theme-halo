@@ -2,8 +2,7 @@
 name: Deploy To Github And Coding
 
 # master branch on push, auto run
-# on: [push, repository_dispatch]
-on: [repository_dispatch]
+on: [push, repository_dispatch]
 
 # YUQUE_TOKEN
 # Github_API_Token

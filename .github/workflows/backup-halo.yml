@@ -44,7 +44,7 @@ jobs:
       run: |
         git clone git@${Coding_halo} .coding_halo
         cd .coding_halo
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./themes/halo/* ./.coding_halo/
         \cp -rf ./.git/ ./.coding_halo/
@@ -60,7 +60,7 @@ jobs:
       run: |
         git clone git@${Github_halo} .github_halo
         cd .github_halo 
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./themes/halo/* ./.github_halo/
         \cp -rf ./.git/ ./.github_halo/
@@ -76,7 +76,7 @@ jobs:
       run: |
         git clone git@${Gitee_halo} .gitee_halo
         cd .gitee_halo
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./themes/halo/* ./.gitee_halo/
         \cp -rf ./.git/ ./.gitee_halo/
