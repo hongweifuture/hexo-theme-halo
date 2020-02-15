@@ -2,7 +2,7 @@
 name: Backup blog-hexo-halo to Gitee and Coding
 
 # master branch on push, auto run
-on: [repository_dispatch]
+on: [push, repository_dispatch]
 
 # Private_Keys   
 jobs:
@@ -43,7 +43,7 @@ jobs:
       run: |
         git clone git@${Gitee_Hexo_Blog} .gitee_hexo_blog
         cd .gitee_hexo_blog
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./* ./.gitee_hexo_blog/
         cd .gitee_hexo_blog
@@ -57,7 +57,7 @@ jobs:
       run: |
         git clone git@${Coding_Hexo_Blog} .coding_hexo_blog
         cd .coding_hexo_blog
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./* ./.coding_hexo_blog/
         cd .coding_hexo_blog
