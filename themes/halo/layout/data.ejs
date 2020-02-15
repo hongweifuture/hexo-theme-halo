@@ -1,0 +1,31 @@
+<%- partial('_partial/bg-cover') %>
+
+<div class="content">
+    <div class="container ">
+        <div class="card post-statis">
+            <%- partial('_partial/post-statis') %>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="card">
+            <%- partial('_widget/post-charts-article') %> 
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="card">
+            <%- partial('_widget/post-charts-tags') %> 
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="card">
+            <%- partial('_widget/post-charts-categories') %> 
+        </div>
+    </div>
+
+    <% if (site.categories && site.categories.length > 0) { %>
+        <%- partial('_widget/category-radar') %>
+    <% } %>
+</div>

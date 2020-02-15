@@ -1,0 +1,92 @@
+<style type="text/css">
+    #posts-chart,
+    #categories-chart,
+    #tags-chart {
+        width: 100%;
+        height: 300px;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+</style>
+
+<div id="postCharts" class="post-charts">
+    <div class="chart" data-aos="zoom-in-up">
+        <div id="tags-chart" class="card-content"></div>
+    </div>
+</div>
+
+<!-- <script type="text/javascript" src="<%- theme.libs.js.echarts %>"></script> -->
+<script type="text/javascript" src="<%- theme.jsDelivr.url %><%- theme.libs.js.echarts %>"></script>
+<script>
+    let tagsChart = echarts.init(document.getElementById('tags-chart'));
+
+    <%
+    /* calculate tagsOption data. */
+    // get all tags name and count,then order by length desc.
+    var tagArr = [];
+    site.tags.map(function(tag) {
+        tagArr.push({'name': tag.name, 'value': tag.length});
+    });
+    tagArr.sort((a, b) => {return b.value - a.value});
+
+    // get Top 10 tags name and count.
+    var tagNameArr = [];
+    var tagCountArr = [];
+    for (var i = 0, len = Math.min(tagArr.length, 10); i < len; i++) {
+        tagNameArr.push(tagArr[i].name);
+        tagCountArr.push(tagArr[i].value);
+    }
+
+    var tagNameArrJson = JSON.stringify(tagNameArr);
+    var tagCountArrJson = JSON.stringify(tagCountArr);
+    %>
+
+    let tagsOption = {
+        title: {
+            text: '<%- __("top10TagsChart")  %>',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {},
+        xAxis: [
+            {
+                type: 'category',
+                data: <%- tagNameArrJson %>
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                color: ['#82d3f4'],
+                barWidth : 18,
+                data: <%- tagCountArrJson %>,
+                markPoint: {
+                    symbolSize: 45,
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '<%- __("maximum")  %>'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '<%- __("minimum")  %>'
+                    }],
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '<%- __("average")  %>'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // render the charts
+    tagsChart.setOption(tagsOption);
+</script>

@@ -1,0 +1,148 @@
+/* Here is your custom css styles. */
+
+
+
+/* hexo-filter-github-emojis */
+.github-emoji{
+    height: 2em;
+    width: 2em;
+    display: inline-block !important;
+    position: relative;
+    margin: 0 3px !important;
+    padding: 0;
+}
+.github-emoji:hover{
+    animation: emoji-face 5s infinite ease-in-out;
+}
+@keyframes emoji-face {
+    2% {
+        transform: translate(0, 1.5px) rotate(1.5deg);
+    }
+    4% {
+        transform: translate(0, -1.5px) rotate(-0.5deg);
+    }
+    6% {
+        transform: translate(0, 1.5px) rotate(-1.5deg);
+    }
+    8% {
+        transform: translate(0, -1.5px) rotate(-1.5deg);
+    }
+    10% {
+        transform: translate(0, 2.5px) rotate(1.5deg);
+    }
+    12% {
+        transform: translate(0, -0.5px) rotate(1.5deg);
+    }
+    14% {
+        transform: translate(0, -1.5px) rotate(1.5deg);
+    }
+    16% {
+        transform: translate(0, -0.5px) rotate(-1.5deg);
+    }
+    18% {
+        transform: translate(0, 0.5px) rotate(-1.5deg);
+    }
+    20% {
+        transform: translate(0, -1.5px) rotate(2.5deg);
+    }
+    22% {
+        transform: translate(0, 0.5px) rotate(-1.5deg);
+    }
+    24% {
+        transform: translate(0, 1.5px) rotate(1.5deg);
+    }
+    26% {
+        transform: translate(0, 0.5px) rotate(0.5deg);
+    }
+    28% {
+        transform: translate(0, 0.5px) rotate(1.5deg);
+    }
+}
+
+
+/*归档页自定义样式*/
+.archive-container {
+  /* padding: 20spx 20px 20px 160px; */
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.archive:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.archive .articles {
+  border-left: 1px solid #dbdbdb;
+}
+
+.archive .article {
+  border-top: none;
+  margin-left: -1px;
+  padding: 0.4rem 1.5rem;
+  border-left: 2px solid transparent;
+}
+
+.archive .article:hover {
+  border-left-color: #0f9d58 ;
+}
+
+.archive .article time {
+  font-size: .9rem;
+  color: deeppink;
+  /* color: darkgray; */
+}
+
+.archive .article h6 {
+  margin: 0;
+}
+
+.archive .article h6 a {
+  line-height: 1.5;
+  color: inherit;
+  border-bottom: 1px dashed transparent;
+}
+
+.archive .article h6 a:hover {
+  border-bottom-color: #0f9d58;
+}
+
+
+.hbe-input-container{
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.hbe-input-container  .btn-decrypt{
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3f90ff;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.about-cover {
+  height: 50vh;
+}
+.desc-content{
+  padding: 0 50px;
+}
+@media only screen and (max-width: 601px) {
+  .desc-content {
+    padding: 0 15px;
+  }
+}
+
+.v .vlist .vcard {
+  padding-top: 2.5em !important;
+}

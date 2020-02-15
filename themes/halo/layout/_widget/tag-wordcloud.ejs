@@ -1,0 +1,45 @@
+<!-- <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.jqcloud %>"> -->
+<link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- theme.libs.css.jqcloud %>">
+
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<style>
+    #tags{
+        margin-top: 0;
+    }
+</style>
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-cloud"></i>&nbsp;&nbsp;<%= __('标签云') %>
+            </div>
+            <div id="tag-wordcloud" class="card-content"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <script type="text/javascript" src="<%- theme.libs.js.jqcloud %>"></script> -->
+<script type="text/javascript" src="<%- theme.jsDelivr.url %><%- theme.libs.js.jqcloud %>"></script>
+<script type="text/javascript">
+    <%
+    let tagWordArr = [];
+    site.tags.map(function(tag) {
+        tagWordArr.push({'text': tag.name, 'weight': tag.length, 'link': decodeURI(tag.permalink)});
+    });
+
+    let tagWords = JSON.stringify(tagWordArr);
+    %>
+
+    $('#tag-wordcloud').jQCloud(<%- tagWords %>, {
+        autoResize: true
+    });
+</script>

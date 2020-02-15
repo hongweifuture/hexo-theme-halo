@@ -1,0 +1,160 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: HONGWEI
+subtitle: Welcome to Johnny'Blog
+description: 求知若饥，虚心若愚。
+keywords: python, django, jenkins
+author: HONGWEI
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://www.zhwei.cn/
+root: /
+# permalink: :year/:month/:day/:title/
+permalink: :urlname/
+permalink_defaults:
+  urlname: index
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# 代码高亮，npm i -S hexo-prism-plugin
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 12
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 12
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: halo
+# theme: hexo-theme-halo
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:hongweifuture/hongweifuture.github.io.git
+  branch: master
+  
+# npm install hexo-generator-search --save
+search:
+  path: search.xml
+  field: post
+
+# 添加 RSS 订阅支持 npm install hexo-generator-feed --save
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  
+# 文章字数统计插件 npm i --save hexo-wordcount
+postInfo:
+  date: true
+  update: false
+  wordCount: true # 设置文章字数统计为 true.
+  totalCount: true # 设置站点文章总字数统计为 true.
+  min2read: true # 阅读时长.
+  readCount: true # 阅读次数.
+
+# hexo-neat 优化提速插件（去掉HTML、css、js的blank字符） npm install hexo-neat --save
+# 修复bug：压缩 md 文件会使 markdown 语法的代码块消失，会删除全角空格
+# 修复bug：压缩会使得页面鼠标点击的'爱心'效果失效，需要排除
+neat_enable: true 
+neat_html: 
+  enable: true 
+  exclude: 
+    - '**/*.md' 
+  
+neat_css: 
+  enable: true 
+  exclude: 
+    - '**/*.min.css' 
+  
+neat_js: 
+  enable: true 
+  mangle: true 
+  output: 
+  compress: 
+  exclude: 
+    - '**/*.min.js' 
+    - '**/**/instantpage.js' 
+    - '**/matery.js'
+    - '**/clicklove.js'
+
+
+
+# 外链跳转插件，自动为所有html文件中外链的a标签生成对应的属性。 
+# 比如 设置target=’_blank’, rel=’external nofollow noopener noreferrer’ 告诉搜索引擎这是外部链接,不要将该链接计入权重。 
+# 同时自动生成外链跳转页面,默认在根目录下 go.html;
+# npm install hexo-external-link --save
+hexo_external_link:
+  enable: true
+  enable_base64_encode: true
+  url_param_name: 'u'
+  html_file_name: 'go.html'
+  target_blank: true
+  link_rel: 'external nofollow noopener noreferrer'
+  domain: '' # 如果开启了防盗链
+  safety_chain: false
