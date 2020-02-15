@@ -43,7 +43,7 @@ jobs:
       run: |
         git clone git@${Github_Hexo_halo} .github_hexo_halo
         cd .github_hexo_halo
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./themes/halo/* ./.github_hexo_halo/
         \cp -rf ./themes/halo_extend/* ./.github_hexo_halo/
@@ -60,7 +60,7 @@ jobs:
       run: |
         git clone git@${Gitee_Hexo_halo} .gitee_hexo_halo
         cd .gitee_hexo_halo
-        git checkout -b master
+        git checkout master
         cd ../
         \cp -rf ./themes/halo/* ./.gitee_hexo_halo/
         \cp -rf ./themes/halo_extend/* ./.gitee_hexo_halo/
