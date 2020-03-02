@@ -33,7 +33,7 @@
   "yuqueConfig": {
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "hongweifuture",
-    "repo": "hexo",
+    "repo": "hexoblog",
     "mdNameFormat": "title",
     "postPath": "source/_posts",
     "onlyPublished": false
