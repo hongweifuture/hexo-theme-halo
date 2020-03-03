@@ -43,7 +43,7 @@ menu:
         icon: fas fa-address-book
       - name: 留言板
         url: /contact
-        icon: fas fa-comments
+        icon: fas fa-comment
 
 
   实验室:
@@ -57,7 +57,7 @@ menu:
         icon: fa fa-heart
       - name: 评论管理
         url: https://4jpbgdidxyhd.leanapp.cn/
-        icon: fa fa-commenting
+        icon: fa fa-comments
   # Archives:
   #   url: /archives
   #   icon: fas fa-archive
