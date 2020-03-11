@@ -31,7 +31,13 @@
 }, {
 	"avatar": "https://cdn.jsdelivr.net/gh/hongcyu/image/touxiang/touxiang.jpg",
 	"name": "hongCYu’s Blog",
-	"introduction": " 向往可以快乐地写代码~<br>",
+	"introduction": " 向往可以快乐地写代码~",
 	"url": "https://hongcyu.cn",
+	"title": "进去看看"
+}, {
+	"avatar": "https://tvax1.sinaimg.cn/large/005DJQmOgy1gcoo2riiunj30e80e83zx.jpg",
+	"name": "Dakuzai",
+	"introduction": " 智者一切求自己，愚者一切求他人。",
+	"url": "https://dakuzai.ml/",
 	"title": "进去看看"
 }]
