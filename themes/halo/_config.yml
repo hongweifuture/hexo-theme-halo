@@ -50,7 +50,7 @@ menu:
     icon: fa fa-server
     children:
       - name: Django 博客
-        url: http://hongwei.design:8000/
+        url: https://blog.zhwei.cn/
         icon: fa fa-heartbeat
       - name: CSDN 博客
         url: https://blog.csdn.net/z_johnny
@@ -227,7 +227,7 @@ reward:
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
   enable: true
-  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
+  minCharNumber: 400 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
 # Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
@@ -294,6 +294,11 @@ myProjects:
         iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
         url: https://github.com/hongweifuture/HwTTK
         desc: Hw Test Tool Kit 测试工具包，关于 Python 的测试模块包合集
+    Django-Blog:
+        icon: fa fa-code 
+        iconBackground: 'linear-gradient(to bottom right, #FF1493 0%, HotPink 100%)'
+        url: https://github.com/hongweifuture/Django-Blog
+        desc: 基于 Python 的 Web 框架 Django 开发的博客系统，采用 Docker + Django + MySQL + Nginx + Gunicorn 进行容器化部署。        
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
