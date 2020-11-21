@@ -10,19 +10,19 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "4.2.1"
   },
   "dependencies": {
-    "hexo": "^4.0.0",
-    "hexo-external-link": "^1.0.7",
+    "hexo": "^4.2.1",
+    "hexo-external-link": "^1.0.8",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.2.0",
     "hexo-generator-index": "^1.0.0",
-    "hexo-generator-search": "^2.4.0",
-    "hexo-generator-sitemap": "^2.0.0",
+    "hexo-generator-search": "^2.4.1",
+    "hexo-generator-sitemap": "^2.1.0",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-neat": "^1.0.4",
+    "hexo-neat": "^1.0.9",
     "hexo-prism-plugin": "^2.3.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-marked": "^2.0.0",
@@ -31,11 +31,15 @@
     "hexo-wordcount": "^6.0.1"
   },
   "yuqueConfig": {
+    "postPath": "source/_posts",
+    "cachePath": "yuque.json",
+    "mdNameFormat": "title",
+    "adapter": "hexo",
+    "concurrency": 5,
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "hongweifuture",
     "repo": "hongweifuture",
-    "mdNameFormat": "title",
-    "postPath": "source/_posts",
-    "onlyPublished": false
+    "onlyPublished": false,
+    "onlyPublic": false
   }
 }

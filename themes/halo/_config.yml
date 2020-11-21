@@ -12,21 +12,25 @@ menu:
       - name: 分类
         url: /articles
         icon: fas fa-bookmark
-      - name: 归档
-        url: /archives
-        icon: fa fa-tasks
+      - name: 标签
+        url: /tags
+        icon: fas fa-tags        
+      #- name: 归档
+      #  url: /archives
+      #  icon: fa fa-tasks
       - name: 统计
         url: /data
         icon: fa fa-list-alt
       - name: 时间轴
         url: /timeline
         icon: fa fa-tree
-      # - name: 标签
-      #   url: /tags
-      #   icon: fas fa-tags
+
       # - name: 分类
       #   url: /categories
       #   icon: fas fa-bookmark
+  归档:
+    icon: fa fa-tasks
+    url: /archives
   About:
     # url: /about
     # icon: fas fa-user-circle fa fa-heart
