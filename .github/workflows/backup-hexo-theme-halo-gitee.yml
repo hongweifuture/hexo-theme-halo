@@ -52,29 +52,7 @@ jobs:
         git add .
         git commit -F ../commit-message.log
         git fetch --unshallow origin
-<<<<<<< HEAD:.github/workflows/backup-hexo-theme-halo-gitee.yml
         git push --force --quiet "git@${Gitee_Hexo_halo}" master:master
-=======
-        git push --force --quiet "git@${Gitee_Hexo_halo}" master:master    
-            
-    - name: Backup Theme To Github Public Project hexo-theme-halo
-      env:
-        Github_Hexo_halo: github.com:hongweifuture/hexo-theme-halo
-      run: |
-        git clone git@${Github_Hexo_halo} .github_hexo_halo
-        cd .github_hexo_halo
-        git checkout master
-        cd ../
-        \cp -rf ./themes/halo/* ./.github_hexo_halo/
-        \cp -rf ./themes/halo_extend/* ./.github_hexo_halo/
-        \cp -rf ./.git/ ./.github_hexo_halo/
-        cd .github_hexo_halo
-        git add .
-        git commit -F ../commit-message.log
-        git fetch --unshallow origin
-        git push --force --quiet "git@${Github_Hexo_halo}" master:master
-        
 
->>>>>>> d7fd052aec19bb247d5700cbb1d2929a63199a69:.github/workflows/backup-hexo-theme-halo.yml
         
  
