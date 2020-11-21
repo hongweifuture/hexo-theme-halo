@@ -1,13 +1,13 @@
 # workflow name
-name: Backup halo to Coding and Gitee
+name: Backup hexo-theme-halo to Gitee
 
 # master branch on push, auto run
 on: [push]
 
-# Private_Keys       
+# Private_Keys      
 jobs:
   backup:
-    name: Backup halo To Private Project 
+    name: Backup hexo-theme-halo To Public Project 
     runs-on: ubuntu-latest 
     env:
       TZ: Asia/Shanghai  
@@ -29,45 +29,29 @@ jobs:
         
     - name: Setup SSH Private Key
       env:
-        token_Private_Keys: ${{ secrets.Private_Keys  }}
+        token_Private_Keys: ${{ secrets.Private_Keys }}
       run: |
         mkdir -p ~/.ssh/
         echo "$token_Private_Keys" > ~/.ssh/id_rsa 
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-        ssh-keyscan e.coding.net >> ~/.ssh/known_hosts
         
-    - name: Backup Theme To Coding Private Project halo
+    - name: Backup Theme To Gitee Public Project hexo-theme-halo
       env:
-        Coding_halo: e.coding.net:hongweifuture/halo.git
+        Gitee_Hexo_halo: gitee.com:hongweifuture/hexo-theme-halo.git
       run: |
-        git clone git@${Coding_halo} .coding_halo
-        cd .coding_halo
+        git clone git@${Gitee_Hexo_halo} .gitee_hexo_halo
+        cd .gitee_hexo_halo
         git checkout master
         cd ../
-        \cp -rf ./themes/halo/* ./.coding_halo/
-        \cp -rf ./.git/ ./.coding_halo/
-        cd .coding_halo
+        \cp -rf ./themes/halo/* ./.gitee_hexo_halo/
+        \cp -rf ./themes/halo_extend/* ./.gitee_hexo_halo/
+        \cp -rf ./.git/ ./.gitee_hexo_halo/
+        cd .gitee_hexo_halo
         git add .
         git commit -F ../commit-message.log
         git fetch --unshallow origin
-        git push --force --quiet "git@${Coding_halo}" master:master
-    
-    - name: Backup Theme To Gitee Private Project halo
-      env:
-        Gitee_halo: gitee.com:hongweifuture/halo.git
-      run: |
-        git clone git@${Gitee_halo} .gitee_halo
-        cd .gitee_halo
-        git checkout master
-        cd ../
-        \cp -rf ./themes/halo/* ./.gitee_halo/
-        \cp -rf ./.git/ ./.gitee_halo/
-        cd .gitee_halo
-        git add .
-        git commit -F ../commit-message.log
-        git fetch --unshallow origin
-        git push --force --quiet "git@${Gitee_halo}" master:master
+        git push --force --quiet "git@${Gitee_Hexo_halo}" master:master
         
  

@@ -1,5 +1,5 @@
 # workflow name
-name: Backup halo to Coding and Gitee
+name: Backup halo to Github 
 
 # master branch on push, auto run
 on: [push]
@@ -29,45 +29,27 @@ jobs:
         
     - name: Setup SSH Private Key
       env:
-        token_Private_Keys: ${{ secrets.Private_Keys  }}
+        token_Private_Keys: ${{ secrets.Private_Keys_Github  }}
       run: |
         mkdir -p ~/.ssh/
         echo "$token_Private_Keys" > ~/.ssh/id_rsa 
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-        ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-        ssh-keyscan e.coding.net >> ~/.ssh/known_hosts
         
-    - name: Backup Theme To Coding Private Project halo
+    - name: Backup Theme To Github Private Project halo
       env:
-        Coding_halo: e.coding.net:hongweifuture/halo.git
+        Github_halo: github.com:hongweifuture/halo
       run: |
-        git clone git@${Coding_halo} .coding_halo
-        cd .coding_halo
+        git clone git@${Github_halo} .github_halo
+        cd .github_halo 
         git checkout master
         cd ../
-        \cp -rf ./themes/halo/* ./.coding_halo/
-        \cp -rf ./.git/ ./.coding_halo/
-        cd .coding_halo
+        \cp -rf ./themes/halo/* ./.github_halo/
+        \cp -rf ./.git/ ./.github_halo/
+        cd .github_halo
         git add .
         git commit -F ../commit-message.log
         git fetch --unshallow origin
-        git push --force --quiet "git@${Coding_halo}" master:master
-    
-    - name: Backup Theme To Gitee Private Project halo
-      env:
-        Gitee_halo: gitee.com:hongweifuture/halo.git
-      run: |
-        git clone git@${Gitee_halo} .gitee_halo
-        cd .gitee_halo
-        git checkout master
-        cd ../
-        \cp -rf ./themes/halo/* ./.gitee_halo/
-        \cp -rf ./.git/ ./.gitee_halo/
-        cd .gitee_halo
-        git add .
-        git commit -F ../commit-message.log
-        git fetch --unshallow origin
-        git push --force --quiet "git@${Gitee_halo}" master:master
+        git push --force --quiet "git@${Github_halo}" master:master
         
  
